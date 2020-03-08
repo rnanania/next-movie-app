@@ -89,6 +89,12 @@ app.prepare().then(() => {
     return handle(req, res);
   });
 
+  server.post("*", (req, res) => {
+    // const parsedUrl = parse(req.url, true);
+    // return handle(req, res, parsedUrl);
+    return handle(req, res);
+  });
+
   const PORT = process.env.PORT || 3000;
 
   server.use(handle).listen(PORT, err => {
